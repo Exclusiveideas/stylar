@@ -1,0 +1,242 @@
+.homeDescSect {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+[data-alternate-desc=true] {
+    flex-direction: row-reverse;
+}
+
+.homeDescSect_left {
+    background-color: black;
+    height: 100%;
+    width: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 2rem 0 var(--padding-left);
+}
+
+[data-alternate-leftdesc=true] {
+    color: black;
+    background-color: white;
+    padding: 0 2rem 0 calc(3rem + var(--padding-left));
+}
+
+.hdsl_innerwrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    /* border: 1px solid red; */
+}
+
+.smallTitle {
+    font-size: 14px;
+}
+
+.mainTitle {
+    font-size: 2rem;
+    width: 90%;
+    font-weight: 600;
+}
+
+.mainTitle>span {
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.hds_cta_wrapper {
+    width: 135px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    margin-top: 1rem;
+}
+
+[data-alternate-leftdesc=true] .hds_cta_wrapper {
+    color: white;
+    background-color: black;
+}
+
+
+.hds_cta_wrapper>p {
+    font-size: 12px;
+    transition: all 0.3s linear;
+}
+
+.plus_icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(.5);
+    opacity: 0;
+    transition: all 0.2s linear;
+    right: 0.5rem;
+}
+
+
+.hds_cta_wrapper:hover p {
+    transform: translateX(-0.75rem);
+}
+
+[data-alternate-leftdesc=true] .hds_cta_wrapper p {
+    transform: translateX(0);
+}
+
+.hds_cta_wrapper:hover .plus_icon {
+    opacity: 1;
+}
+
+[data-alternate-leftdesc=true] .hds_cta_wrapper .plus_icon {
+    opacity: 0;
+}
+
+
+.homeDescSect_right {
+    background-color: #FCF8F9;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 900px) {
+    .homeDescSect {
+        height: 70vh;
+    }    
+    
+    .homeDescSect_left {
+        padding: 2rem 3rem;
+    }
+
+
+    [data-alternate-leftdesc=true] {
+        padding: 2rem 3rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .homeDescSect {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    [data-alternate-desc=true] {
+        flex-direction: column;
+    }
+
+    .homeDescSect_left {
+        height: 60%;
+        width: 100%;
+        padding: 2rem 2rem;
+    }
+
+
+    [data-alternate-leftdesc=true] {
+        padding: 2rem 2rem;
+    }
+
+    .hdsl_innerwrapper {
+        padding: 1rem 0;
+    }
+
+    .homeDescSect_right {
+        height: 100%;
+        width: 100%;
+    }
+
+    .smallTitle {
+        font-size: 14px;
+    }
+
+    .mainTitle {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .hds_cta_wrapper {
+        width: 135px;
+        height: 47px;
+        margin-top: 1rem;
+    }
+
+
+    .hds_cta_wrapper>p {
+        font-size: 13px;
+    }
+
+    .plus_icon {
+        transform: scale(.5);
+        right: 0.3rem;
+    }
+
+
+    .hds_cta_wrapper:hover p {
+        transform: translateX(-0.4rem);
+    }
+
+    [data-alternate-leftdesc=true] .hds_cta_wrapper p {
+        transform: translateX(0);
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .homeDescSect_left {
+        padding: 0 .5rem;
+    }
+
+    .smallTitle {
+        font-size: 10px;
+    }
+
+    .mainTitle {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .hds_cta_wrapper {
+        width: 95px;
+        height: 35px;
+        margin-top: .5rem;
+        padding: 0 .5rem;
+    }
+
+
+    .hds_cta_wrapper>p {
+        font-size: 10px;
+    }
+
+    .plus_icon {
+        transform: scale(.4);
+        right: 0.1rem;
+    }
+
+}

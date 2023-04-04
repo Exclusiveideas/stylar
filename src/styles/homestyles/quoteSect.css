@@ -1,0 +1,101 @@
+.quoteSect {
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: black;
+    height: 35vh;
+    overflow-x: hidden;
+    margin-bottom: 2rem;
+}
+
+.quoteSect_contents_wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.2rem;
+    box-sizing: border-box;
+    color: white;
+    padding-left: 4rem;
+    text-align: left;
+}
+
+.headerTxt {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', 'Poppins', 'Nunito', sans-serif;
+}
+
+.headerTxt>span {
+    font-size: 2.7rem;
+    font-family: 'Playfair Display', 'Poppins', 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+.smallTxt {
+    font-size: 13px;
+    width: 70%;
+    text-align: left;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 600px) {
+    .quoteSect {
+        height: 30vh;
+    }
+
+    .quoteSect_contents_wrapper {
+        padding-left: 2rem;
+    }
+
+    .headerTxt {
+        font-size: 2rem;
+    }
+
+    .headerTxt>span {
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+
+    .smallTxt {
+        font-size: 14px;
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .quoteSect_contents_wrapper {
+        padding-left: 1rem;
+    }
+
+    .headerTxt {
+        font-size: 1.3rem;
+    }
+
+    .headerTxt>span {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .smallTxt {
+        font-size: 12px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .headerTxt {
+        font-size: 1rem;
+    }
+
+    .headerTxt>span {
+        font-size: 1.2rem;
+    }
+
+    .smallTxt {
+        font-size: 10px;
+    }
+
+}

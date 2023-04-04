@@ -1,0 +1,398 @@
+.footer {
+    width: 100vw;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: var(--footer-color);
+    padding-top: 60px;
+    overflow-x: hidden;
+}
+
+.footer_top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    gap: .5rem;
+    box-sizing: border-box;
+}
+
+.mailSubscription_wrapper {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    width: 50%;
+    padding: 0.5rem;
+    background-color: rgba(150, 150, 144, 0.51);
+}
+
+.input_cont {
+    padding: 0.5rem;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+.input_cont::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
+.input_cont:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+.input_cont::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+.subscribe_btn {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .8rem 1.6rem;
+
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-width: max-content;
+}
+
+.cInbox {
+    display: none;
+}
+
+.checkIcon {
+    height: 25px;
+    display: none;
+    z-index: 3;
+}
+
+.sbtn_filler_rect {
+    position: absolute;
+    top: 105%;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background-color: black;
+    transition: all 0.6s linear;
+    z-index: 2;
+}
+
+
+.subscribe_btn>p {
+    transition: all 0.6s linear;
+    z-index: 5;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.subscribe_btn:hover .sbtn_filler_rect {
+    transform: translateY(-90%);
+}
+
+.subscribe_btn:hover p {
+    color: white;
+}
+
+.errorText {
+    font-size: 15px;
+    visibility: hidden;
+}
+
+
+
+.footer_middle {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+}
+
+.fm_leftWrapper {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-left: var(--padding-left);
+}
+
+.brandName {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+}
+
+.brandName,
+.fm_rw_title,
+.links_text {
+    font-family: 'Playfair Display', 'Poppins', 'Nunito', sans-serif;
+}
+
+.fm_rightWrapper {
+    flex: 2.3;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fm_rw_innerCont {
+    box-sizing: border-box;
+    padding: .5rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fm_rw_title {
+    font-size: 20px;
+}
+
+.fm_rw_link_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.linTxt_div {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    box-sizing: border-box;
+}
+
+.fm_linkIcon {
+    width: 18px;
+}
+
+.linTxt_div>a {
+    color: white;
+}
+
+.fm_link_underline {
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    border: none;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s linear;
+}
+
+.linTxt_div:hover .fm_link_underline {
+    width: 100%;
+}
+
+
+
+
+
+
+
+.footer_bottom {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fb_innerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.c_rightIcon {
+    transform: scale(.7);
+}
+
+.cright_underline {
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s linear;
+}
+
+.fb_innerWrapper:hover .cright_underline {
+    width: 95%;
+}
+
+
+
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 768px) {
+    .footer {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .footer_middle {
+        height: max-content;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .fm_rightWrapper {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .fm_rw_innerCont {
+        width: 30%;
+        gap: 1rem;
+        border-left: 1px dashed gray;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .footer {
+        padding: 60px 1rem 1rem 1rem;
+        height: max-content;
+    }
+
+    .mailSubscription_wrapper {
+        flex-direction: column;
+        gap: 1rem;
+        background-color: transparent;
+        padding: 0;
+        width: 100%;
+    }
+
+    .input_cont {
+        padding: 0.7rem;
+        width: 100%;
+        background-color: rgba(150, 150, 144, 0.51);
+    }
+
+    .subscribe_btn {
+        padding: .6rem 1.6rem;
+        min-width: max-content;
+    }
+
+    .errorText,
+    .input_cont,
+    .subscribe_btn {
+        font-size: 13px;
+    }
+
+
+    .footer_middle {
+        padding: 0 0 .5rem 0;
+    }
+
+    .fm_leftWrapper {
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .fm_rightWrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .fm_rw_innerCont {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .fm_rw_title {
+        text-align: center;
+        font-size: 20px;
+        text-decoration: overline;
+    }
+
+    .fm_rw_link_cont {
+        align-items: center;
+        gap: .3rem;
+    }
+
+    .linTxt_div {
+        font-size: 14px;
+        width: max-content;
+    }
+
+    .fm_linkIcon {
+        width: 17px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .errorText,
+    .input_cont,
+    .subscribe_btn {
+        font-size: 10px;
+    }
+
+    .footer_middle {
+        padding: 0 0 1rem 0;
+    }
+
+    .fm_rw_title {
+        font-size: 18px;
+    }
+
+
+    .linTxt_div {
+        font-size: 12px;
+    }
+
+    .fm_linkIcon {
+        width: 15px;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 300px) {
+}

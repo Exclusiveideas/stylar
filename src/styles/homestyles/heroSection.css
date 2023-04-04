@@ -1,0 +1,76 @@
+.heroSection {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url('@assets/hero_bg.jpg');
+    background-size: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.49);
+    z-index: 2;
+}
+
+.heroSect_desc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--padding-left);
+    margin: auto;
+    height: max-content;
+    z-index: 3;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.hero_title {
+    color: white;
+    font-size: 3.5rem;
+    margin-top: 3rem;
+}
+
+.hero_cta {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta_text {
+    font-size: 13px;
+    transition: all 0.3s linear;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(.45);
+    visibility: hidden;
+    transition: all 0.2s linear;
+    right: 1.7rem;
+}
+
+.hero_cta:hover .cta_text {
+    transform: translateX(-1rem);
+}
+
+.hero_cta:hover .arrow {
+    visibility: visible;
+    right: 0.7em;
+}

@@ -1,0 +1,137 @@
+.quotesecttwo {
+    width: 100vw;
+    box-sizing: border-box;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+    margin-bottom: 4rem;
+    overflow-x: hidden;
+    border: 1px solid gray;
+}
+
+.quotesecttwo_innerWrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .9rem;
+}
+
+.title {
+    font-size: 2.9rem;
+    font-family: 'Playfair Display', 'Poppins', 'Nunito', sans-serif;
+}
+
+.desc {
+    font-size: 14px;
+    width: 70%;
+}
+
+.quote2_cta_wrapper {
+    width: 135px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.quote2_cta_wrapper>p {
+    color: white;
+    font-size: 12px;
+    transition: all 0.3s linear;
+}
+
+.quote2_cta_wrapper>.arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(.45);
+    visibility: hidden;
+    transition: all 0.2s linear;
+    right: 1.7rem;
+}
+
+
+.quote2_cta_wrapper:hover p {
+    transform: translateX(-1rem);
+}
+
+.quote2_cta_wrapper:hover .arrow {
+    visibility: visible;
+    right: 0.5rem;
+}
+
+
+@media screen and (max-width: 700px) {
+    .quotesecttwo {
+        padding-left: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .quotesecttwo {
+        height: 35vh;
+        margin-bottom: 2rem;
+    }
+
+    .quotesecttwo_innerWrapper {
+        gap: 1.3rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .desc {
+        font-size: 14px;
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .quotesecttwo {
+        height: 33vh;
+        padding-left: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .desc {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    .quote2_cta_wrapper {
+        width: 98px;
+        height: 35px;
+    }
+
+    .quote2_cta_wrapper>p {
+        font-size: 10px;
+    }
+
+    .quote2_cta_wrapper>.arrow {
+        transform: scale(.3);
+        right: .5rem;
+    }
+
+    .quote2_cta_wrapper:hover p {
+        transform: translateX(-.5rem);
+    }
+
+    .quote2_cta_wrapper:hover .arrow {
+        visibility: visible;
+        right: -0.2rem;
+    }
+}

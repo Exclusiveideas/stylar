@@ -76,7 +76,7 @@ const MiniCatalogue = ({ catInfo }) => {
             <div ref={catRef} className="miniCatalogue_catalogue">
                 <div className="mincat_Cont">
                     {CATS?.map((cat, i) => (
-                        <HomeMiniCat key={i} homepage={true} cat={cat} index={i} setActiveIndex={setActiveIndex} />
+                        <HomeMiniCat key={i} cat={cat} index={i} setActiveIndex={setActiveIndex} />
                     ))}
                 </div>
             </div>

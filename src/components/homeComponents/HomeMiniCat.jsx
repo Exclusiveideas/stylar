@@ -2,14 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import '@homestyles/homeMiniCat.css';
 import useIsVisible from '@hooks/useIsVisible';
 
-const HomeMiniCat = ({ cat, activeEnlarge, homepage, index, setActiveIndex }) => {
+const HomeMiniCat = ({ cat, activeEnlarge, index, setActiveIndex }) => {
 
     const minCatRef = useRef();
     const isVisible = useIsVisible(minCatRef);
 
     useEffect(() => {
-        if (!homepage) return;
-
         isVisible && setActiveIndex(index);
     }, [isVisible]);
 

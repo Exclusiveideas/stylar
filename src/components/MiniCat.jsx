@@ -1,22 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import '@homestyles/miniCatalogue.css';
-import useIsVisible from '@hooks/useIsVisible';
 
-const MiniCat = ({ cat, activeEnlarge, homepage, index, setActiveIndex }) => {
-
-    const minCatRef = useRef();
-    const isVisible = useIsVisible(minCatRef);
-
-    useEffect(() => {
-        if (!homepage) return;
-
-        isVisible && setActiveIndex(index);
-    }, [isVisible]);
-
-
+const MiniCat = ({ cat, activeEnlarge }) => {
 
     return (
-        <div ref={minCatRef} className='mincat_wrapper'>
+        <div className='mincat_wrapper'>
             <div className="mincat_wrapper_top">
                 <img src={cat?.productImg} alt="product" className="mincat_product_img" />
             </div>

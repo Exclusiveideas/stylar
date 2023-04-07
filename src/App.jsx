@@ -2,6 +2,7 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 import Home from './pages/Home'
 import Products from './pages/Products'
+import Product from './pages/Product'
 
 function App() {
 
@@ -9,9 +10,10 @@ function App() {
   return (
     <>
       <Header />
-      {/* <HeaderCompensator />
-      <Products /> */}
-      <Home />
+      <HeaderCompensator />
+      {/* <Products /> */}
+      {/* <Home /> */}
+      <Product />
       <Footer />
     </>
   )

@@ -4,6 +4,7 @@ import product_x from "@assets/product_x.png";
 import product_y from "@assets/product_y.png";
 import star from '@assets/star.svg';
 import plus from '@assets/plus.svg';
+import dash from '@assets/dash.svg';
 import ap_icon from '@assets/ap_icon.svg';
 import cloud from '@assets/cloud.svg';
 import wave from '@assets/wave.svg';
@@ -12,32 +13,34 @@ import u_star from '@assets/u-star.svg';
 import MiniCat from '../MiniCat';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import useIsVisible from '@hooks/useIsVisible';
 
 const ProductView = () => {
   gsap.registerPlugin(ScrollTrigger)
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const productViewRef = useRef()
-  const productViewRefRight = useRef()
 
   useEffect(() => {
 
-    const productViewRHeight = productViewRefRight?.current?.offsetHeight
-
-    console.log(productViewRHeight)
-
     let ctx = gsap.context(() => {
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.pvm_imgCont',
-          scrub: 1,
-          toggleActions: "play reverse play reverse",
-          pin: true,
-          start: "-=60",
-          end: `+=${productViewRHeight * (2.5 / 4)}`,
-          // markers: true
-        },
+      ScrollTrigger.create({
+        trigger: ".pvm_imgCont",
+        start: "-=100",
+        endTrigger: ".completeTheLook",
+        end: "bottom bottom",
+        pin: true,
       });
+
+      ScrollTrigger.create({
+        trigger: ".completeTheLook",
+        start: "top bottom",
+        endTrigger: ".completeTheLook",
+        end: "bottom bottom"
+      });
+
+
     }, productViewRef);
 
     return () => ctx.revert(); // cleanup
@@ -46,11 +49,16 @@ const ProductView = () => {
   return (
     <div ref={productViewRef} className='productView'>
       <div className="productView_left">
-        <div className="pv_productQuickView">
+        <div className="pvLeft_Wrapper">
+          <div className="pv_productQuickView">
+            {Array(5).fill().map((_, i) => (
+              <PVIMGContainer key={i} index={i} setActiveIndex={setActiveIndex} />
+            ))}
+          </div>
+        </div>
+        <div className="curr_pv_items">
           {Array(5).fill().map((_, i) => (
-            <div key={i} className="pv_pqv_imgCont">
-              <img src={product_x} alt="product image" className="pv_pqv_productImage" />
-            </div>
+            <div key={i} className={`curr_pv_item ${activeIndex == i && 'active_curr_pv_item'}`}></div>
           ))}
         </div>
       </div>
@@ -59,17 +67,39 @@ const ProductView = () => {
           <img src={product_x} alt="product image" className="pvm_productImage" />
         </div>
       </div>
-      <div ref={productViewRefRight} className="productView_right">
+      <div className="productView_right">
         <div className="pv_right_innerWrapper">
           <FirstProductDet />
           <SecondProductDet />
           <CompleteTheLook />
         </div>
       </div>
+      <div className="endTrigger"></div>
+    </div>
+  )
+};
+
+export default ProductView;
+
+const PVIMGContainer = ({ index, setActiveIndex }) => {
+
+  const pvImgRef = useRef();
+  const isVisible = useIsVisible(pvImgRef);
+
+  useEffect(() => {
+    isVisible && setActiveIndex(index);
+  }, [isVisible]);
+
+
+  return (
+    <div ref={pvImgRef} className="pv_pqv_imgCont">
+      <img src={product_x} alt="product image" className="pv_pqv_productImage" />
     </div>
   )
 }
-export default ProductView;
+
+
+
 
 let review = {
   rating: 4
@@ -80,7 +110,7 @@ let colorOpts = ['5A5A74', 'A1B5D0', '030000', '648017'];
 
 const FirstProductDet = () => {
   return (
-    <div className="firstProductDet">
+    <div className="ProductDetWrapper">
       <div className="fpd_nameSect">
         <div className="fpd_rating_wrapper">
           <div className="fpd_rw_stars">
@@ -133,6 +163,7 @@ const FirstProductDet = () => {
   )
 }
 
+
 const SecondProductDet = () => {
   const [showMC, setShowMC] = useState(false)
   const [showRT, setShowRT] = useState(false)
@@ -148,7 +179,7 @@ const SecondProductDet = () => {
   }
 
   return (
-    <div ref={SPDetRef} className="secondProductDet">
+    <div ref={SPDetRef} className="ProductDetWrapper">
       <div className="spd_descSect">
         <p className="descTxt">
           The AO Long Sleeve Curve-Hem Tee brings a modern edge to our classic henley silhouette. Cut from our proprietary PYCA Pro® fabric and detailed with a curved hemline, this tee is designed for comfort and versatility. Designed to keep up with an active lifestyle, this henley is great for the work week, travel, and any occasion from casual to formal wear. Featuring a more trim, Signature-fit, it’s tailored to move with your body and will become one of your favorite tees in no time.
@@ -158,7 +189,11 @@ const SecondProductDet = () => {
         <div className="spd_mc_top">
           <p className="mctop_title">Material & Care</p>
           <div className="spd_plusWrapper" onClick={toggleShowMC}>
-            <img src={plus} alt="expand icon" className="spd_plus_icon" />
+            {!showMC ? (
+              <img src={plus} alt="expand icon" className="spd_plus_icon" />
+            ) : (
+              <img src={dash} alt="expand icon" className="spd_plus_icon" />
+            )}
           </div>
         </div>
         <div className={`spd_mc_expandedSect ${showMC && 'open'}`}>
@@ -184,7 +219,11 @@ const SecondProductDet = () => {
         <div className="spd_mc_top">
           <p className="mctop_title">Returns</p>
           <div className="spd_plusWrapper" onClick={toggleShowRT}>
-            <img src={plus} alt="expand icon" className="spd_plus_icon" />
+            {!showRT ? (
+              <img src={plus} alt="expand icon" className="spd_plus_icon" />
+            ) : (
+              <img src={dash} alt="expand icon" className="spd_plus_icon" />
+            )}
           </div>
         </div>
         <div className={`spd_rt_expandedSect ${showRT && 'open'}`}>
@@ -197,7 +236,8 @@ const SecondProductDet = () => {
   )
 }
 
-const CompleteTheLook = () => {
+
+const CompleteTheLook = ({ compRef }) => {
 
   let CATS = [
     {
@@ -217,7 +257,7 @@ const CompleteTheLook = () => {
   ]
 
   return (
-    <div className="completeTheLook">
+    <div className="ProductDetWrapper completeTheLook">
       <div className="ctL_titleWrapper">
         <p className="ctlTitle">Complete The Look</p>
       </div>
@@ -228,4 +268,4 @@ const CompleteTheLook = () => {
       </div>
     </div>
   )
-}
+};

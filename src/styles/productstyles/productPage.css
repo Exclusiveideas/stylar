@@ -1,0 +1,14 @@
+.productPage {
+    width: 100vw;
+    box-sizing: border-box;
+    height: max-content;
+    overflow-x: hidden;
+    margin-bottom: 2rem;
+}
+
+.reviewsWrapper {
+    width: 100%;
+    box-sizing: border-box;
+    height: max-content;
+    padding: 1rem;
+}

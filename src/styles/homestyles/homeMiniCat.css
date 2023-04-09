@@ -6,6 +6,12 @@
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 

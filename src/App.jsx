@@ -3,6 +3,7 @@ import Footer from '@components/Footer'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import Product from './pages/Product'
+import Four04 from './pages/404'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
       <HeaderCompensator />
       {/* <Products /> */}
       {/* <Home /> */}
-      <Product />
+      {/* <Product /> */}
+      <Four04 />
       <Footer />
     </>
   )

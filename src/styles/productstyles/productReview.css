@@ -1,0 +1,135 @@
+.productReview {
+    width: 100vw;
+    box-sizing: border-box;
+    height: max-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: .7rem;
+    border-bottom: 1px solid black;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    padding-left: 2rem;
+}
+
+.pr_pImgContainer {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.imgwrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.pr_pRightContainer {
+    box-sizing: border-box;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 0.5rem;
+    padding-top: 0;
+}
+
+.pr_prTop_wrapper {
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.reviewerName {
+    font-weight: 500;
+}
+
+.verified_buyer {
+    font-size: 12px;
+}
+
+.pr_rating_wrapper {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    gap: .3rem;
+    /* padding-left: .5rem; */
+}
+
+.pr_star_icon {
+    width: 12px;
+}
+
+.pr_titleWrapper {
+    /* padding: 0.5rem; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.pr_titleWrapper>.pr_title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.pr_titleWrapper>.rBody {
+    font-size: 13px;
+}
+
+.pr_reviewOnWrapper {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.pr_reviewOnWrapper>p {
+    margin-top: .5rem;
+    font-size: 12px;
+}
+
+.pr_reviewOnWrapper>p>span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+/*  Media Queries */
+
+@media screen and (max-width: 768px) {
+    .productReview {
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .pr_titleWrapper>.pr_title,
+    .pr_titleWrapper>.rBody,
+    .pr_reviewOnWrapper>p {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .productReview {
+        flex-direction: column;
+    }
+
+    .pr_pRightContainer {
+        padding: 0.5rem 0;
+    }
+
+    .pr_titleWrapper>.pr_title,
+    .pr_titleWrapper>.rBody,
+    .pr_reviewOnWrapper>p {
+        width: 85%;
+    }
+}

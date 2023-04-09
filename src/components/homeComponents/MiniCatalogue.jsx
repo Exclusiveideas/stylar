@@ -7,20 +7,6 @@ import HomeMiniCat from './HomeMiniCat';
 
 const CATS = [
     {
-        color: "gray",
-        title: "AO Curve-Hem Tee",
-        price: 54,
-        productImg: product_x,
-        colors: ['#C0742E', '#592A88', '#2E631B', '#2D5F8D', '#8A1D1D']
-    },
-    {
-        color: "Pacific Blue",
-        title: "Concorde Jogger",
-        price: 62,
-        productImg: product_y,
-        colors: ['#8A1D1D', '#C0742E', '#592A88', '#2E631B']
-    },
-    {
         color: "dust",
         title: "AO Henley Curve-Hem",
         price: 58,

@@ -113,7 +113,7 @@
 /*  */
 
 .mincat_Cont {
-    width: max-content;
+    width: max-content; 
     height: max-content;
     padding: 1.5rem;
     box-sizing: border-box;
@@ -133,6 +133,12 @@
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .mincat_wrapper_top {

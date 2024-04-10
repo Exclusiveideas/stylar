@@ -19,7 +19,7 @@ STYLAR is fully developed but yet to be deployed 🔨 👷 🔧
 To run STYLAR locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/Exclusiveideas/stylar.git`
-2. enter stylr directory: `cd /stylar`
+2. enter stylr directory: `cd ./stylar`
 3. Install dependencies: `npm install`
 4. Start the application: `npm run dev`
 5. Open your browser and visit your local server
